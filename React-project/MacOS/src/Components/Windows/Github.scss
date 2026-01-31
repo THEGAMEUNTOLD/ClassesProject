@@ -1,0 +1,138 @@
+/* ===============================
+   GitHub Projects Window
+   Size-independent layout
+================================ */
+
+.github-content {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, maxmin(260px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* ===============================
+   Project Card
+================================ */
+
+.github-card {
+    // gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* ===============================
+   Image (auto height)
+================================ */
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* responsive, not fixed */
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ===============================
+   Card Body (content decides size)
+================================ */
+
+.card-body {
+  padding: 0.85rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: #ffffff;
+
+  h3 {
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  p {
+    font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+}
+
+/* ===============================
+   Tags (wrap naturally)
+================================ */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+
+  .tag {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(70, 69, 69, 0.733);
+    white-space: nowrap;
+  }
+}
+
+/* ===============================
+   Links (stick to bottom naturally)
+================================ */
+
+.links {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+
+  a {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.22);
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+/* ===============================
+   Scrollbar (macOS subtle)
+================================ */
+
+.github-content::-webkit-scrollbar {
+  width: 1px;
+}
+
+.github-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+
+.github-content::-webkit-scrollbar-track {
+  background: transparent;
+}

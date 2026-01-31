@@ -3,6 +3,7 @@ import "./App.scss"
 import Dock from './Components/Dock'
 import Navbar from './Components/Navbar'
 import MacWindow from './Components/Windows/MacWindow'
+import Github from './Components/Windows/Github'
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
       <main>
         <Navbar />
         <Dock />
-        <MacWindow><p>Hello from App.jsx!</p></MacWindow>
+        <Github/>
       </main>
     </div>
   )
