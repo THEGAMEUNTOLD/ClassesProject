@@ -1,12 +1,14 @@
 import React from 'react'
+import 'remixicon/fonts/remixicon.css'
 import "../Navbar.scss"
+import DateTime from './DateTime'
 
 const Navbar = () => {
     return (
         <div className='Navbar'>
             <div className='left'>
                 <div className='profile_icon'>
-                    <img src="public\profile logo.png" alt="" />
+                    <i class="ri-apple-fill"></i>
                 </div>
                 <div className='Navbar_item'>
                     <p>Bharat Choudhary</p>
@@ -26,7 +28,12 @@ const Navbar = () => {
 
             </div>
             <div className="right">
-            
+                <div className='Wifi_icon'>
+                    <i class="ri-wifi-line"></i>
+                </div>
+                <div className='Navbar_item'>
+                    <DateTime />
+                </div>
             </div>
 
         </div>

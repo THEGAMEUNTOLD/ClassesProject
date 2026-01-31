@@ -4,48 +4,67 @@
     left: 0;
     width: 100%;
     height: 2rem;
-    color: rgb(231, 215, 215);
+    color: rgb(255, 255, 255);
     padding-inline: 0.75rem;
     padding-block: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 14px;
-
-    /* Glassmorphism */
-    background: rgba(255, 255, 255, 0.509);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-
-    /* Subtle depth */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-
-    /* Text */
-    // color: #000;
-    
-
+    padding: 0 18px;
+    background: rgba(0, 0, 0, 0.338); 
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 10px 10px rgba(255, 255, 255, 0.2);
     z-index: 1000;
 
 
     .left {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1rem; 
 
         .profile_icon {
-            width: 2rem;
-            height: 2rem;
-            border-radius: 2rem;
-            background: rgb(0, 0, 0);
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50rem;
 
-            img {
+            i {
+                font-size: 1rem;
+                color: white;
                 width: 100%;
                 height: 100%;
-                object-fit: cover
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
-            ;
+
+        }
+
+        .Navbar_item p {
+            font-size: 0.85rem;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .Wifi_icon {
+            width: 1rem;
+            height: 1rem;
+
+            i {
+                font-size: 0.8rem;
+                color: white;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 }
