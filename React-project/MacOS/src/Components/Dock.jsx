@@ -1,21 +1,62 @@
-import React from 'react'
+import React from "react"
 import "../Dock.scss"
 
-const Dock = () => {
-    return (
-        <footer className='Dock'>
-            <div className='icon GitHub'><img src="public/Doc_icon/GitHub_icon.png" alt="" /></div>
-            <div className='icon Calender'><img src="public/Doc_icon/Calender_icon.png" alt="" /></div>
-            <div className='icon Link'><img src="public/Doc_icon/Link_icon.png" alt="" /></div>
-            <div className='icon Message'><img src="public/Doc_icon/Message_icon.png" alt="" /></div>
-            <div className='icon Notes'><img src="public/Doc_icon/Notes_icon.png" alt="" /></div>
-            <div className='icon Pdf'><img src="public/Doc_icon/Pdf_icon.png" alt="" /></div>
-            <div className='icon Clip'><img src="public/Doc_icon/Clip_icon.png" alt="" /></div>
-            <div className='icon Spotify'><img src="public/Doc_icon/Spotify_icon.png" alt="" /></div>
-            <div className='icon Code'><img src="public/Doc_icon/code_icon.png" alt="" /></div>
+const Dock = ({ windowsState, setWindowsState }) => {
 
-        </footer>
-    )
+  const toggleWindow = (windowName) => {
+    setWindowsState(prev => ({
+      ...prev,
+      [windowName]: !prev[windowName]
+    }))
+  }
+
+  return (
+    <footer className="Dock">
+
+      <div
+        className="icon GitHub"
+        onClick={() => toggleWindow("github")}
+      >
+        <img src="/Doc_icon/GitHub_icon.png" alt="GitHub" />
+      </div>
+
+      <div
+        className="icon Terminal"
+        onClick={() => toggleWindow("cli")}
+      >
+        <img src="/Doc_icon/Terminal_icon.png" alt="Terminal" />
+      </div>
+
+      <div
+        className="icon Message"
+        onClick={() => toggleWindow("resume")}
+      >
+        <img src="/Doc_icon/Message_icon.png" alt="Resume" />
+      </div>
+
+      <div
+        className="icon Pdf"
+        onClick={() => toggleWindow("notes")}
+      >
+        <img src="/Doc_icon/Pdf_icon.png" alt="Notes" />
+      </div>
+
+      <div
+        className="icon Spotify"
+        onClick={() => toggleWindow("spotify")}
+      >
+        <img src="/Doc_icon/Spotify_icon.png" alt="Spotify" />
+      </div>
+
+      <div
+        className="icon Code"
+        onClick={() => toggleWindow("code")}
+      >
+        <img src="/Doc_icon/code_icon.png" alt="Code" />
+      </div>
+
+    </footer>
+  )
 }
 
 export default Dock
